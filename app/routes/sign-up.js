@@ -14,18 +14,16 @@ export default Ember.Route.extend({
         let myBoroughs = this.controller.get('selected_boroughs');
         let myInterests = this.controller.get('selected_interests');
         let address = (myProfile.street +", "+ myProfile.city +", "+ myProfile.state);
-        alert(address);
         this.get('gMap')
           .geocode({address})
           .then((geocodes) => {
           let myLatitude = geocodes[0].geometry.location.lat();
           let myLongitude = geocodes[0].geometry.location.lng();
-          alert(myLatitude +", "+ myLongitude);
           this.set('myLat', myLatitude);
           this.set('myLong', myLongitude);
         });
 
-        if (myProfile.email && myProfile.username && myProfile.password && myProfile.maker_type && myProfile.first_name && myProfile.last_name && myProfile.street && myProfile.city && myProfile.state && myProfile.zip && myBoroughs && myInterests) {
+        if (myProfile.email && myProfile.username && myProfile.password && myProfile.maker_type && myProfile.first_name && myProfile.last_name && myProfile.street && myProfile.city && myProfile.state && myProfile.zip && myBoroughs && myInterests && this.myLat && this.myLong) {
           let newProfile = this.store.createRecord('sign_up', {
             email: myProfile.email,
             username: myProfile.username,
