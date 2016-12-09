@@ -15,15 +15,9 @@
             {{#link-to 'index' tagName="li"}}<a href="">Home</a>{{/link-to}}
             {{#link-to 'about' tagName="li"}}<a href="">About</a>{{/link-to}}
             {{#link-to 'sign-up' tagName="li"}}<a href="">Sign Up</a>{{/link-to}}
-            {{#if session.isAuthenticated}}
             {{#link-to 'dashboard' tagName="li"}}<a href="">My MakerMap</a>{{/link-to}}
-              {{#link-to 'profile' tagName="li"}}<a href="">Profile</a>{{/link-to}}
-              {{#link-to 'search' tagName="li"}}<a href="">Search</a>{{/link-to}}
-              <a {{action 'invalidateSession'}}>Sign Out</a>
-            {{else}}
-              {{#link-to 'sign-in'}}Sign In{{/link-to}}
-            {{/if}}
-            
+            {{#link-to 'profile' tagName="li"}}<a href="">Profile</a>{{/link-to}}
+            {{#link-to 'search' tagName="li"}}<a href="">Search</a>{{/link-to}}
         </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

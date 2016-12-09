@@ -36,12 +36,6 @@ module.exports = function(environment) {
     'apiKey': 'AIzaSyAi80JmwUy0Btb510M8Oa5XW28ClWDOTtg'
   };
   
-  ENV['ember-simple-auth'] = {
-  baseURL: '',
-  authenticationRoute: 'sign-in',
-  routeAfterAuthentication: 'dashboard',
-  routeIfAlreadyAuthenticated: 'dashboard'
-  };  
 ENV.contentSecurityPolicy = {
   'default-src': "'none'",
   'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",

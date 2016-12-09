@@ -4,7 +4,6 @@
     "ember": "~2.9.0",
     "ember-cli-shims": "0.1.3",
     "firebase": "^3.0.0",
-    "gmaps-for-apps": "^0.5.14",
-    "ember-simple-auth": "0.8.0"
+    "gmaps-for-apps": "^0.5.14"
   }
 }
