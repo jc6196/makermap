@@ -1,11 +1,8 @@
-<h1>Sign In</h1>
-<form {{action 'authenticate' on='submit'}}>
-  <label for="identification">Sign In</label>
-  {{input id='identification' placeholder='Enter Username' value=identification}}
-  <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}
-  <button type="submit">Login</button>
-  {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
-  {{/if}}
-</form>
+<div class="container">
+  <h1>Sign In</h1>
+  <form>
+    <p>{{input id='identification' placeholder='Enter Username' value=identification class="form-control"}}</p>
+    <p>{{input id='password' placeholder='Enter Password' type='password' value=password class="form-control"}}</p>
+    <p><button class="btn btn-primary">Login</button></p>
+  </form>
+</div>
