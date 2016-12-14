@@ -12,7 +12,8 @@ export default Ember.Route.extend({
           lat: item.get('lat'),
           lng: item.get('long'),
           infoWindow: {
-            content: '<h4>'+item.get('username')+'</h4><p>'+item.get('maker_type')+'</p><p>'+item.get('selected_interests')+'</p>',
+            content: '<h4>'+item.get('company_name')+'</h4><p>'+item.get('maker_type')+'</p><p>'+item.get('selected_interests')+',</p><a href="profile"><button class="btn btn-primary">More Info</button></a>'
+,
             visible: false
             },
         });
@@ -24,7 +25,7 @@ export default Ember.Route.extend({
       lat: 40.7128,
       lng: -74.0059,
       zoom: 11,
-      markers: this.get('markersArray'),
+      markers: this.get('markersArray')
       // Must be an Ember Array
       /*
       markers: Ember.A([{
@@ -68,6 +69,7 @@ export default Ember.Route.extend({
      ])
      */
     });
+    console.log("markers: " + this.get('markersArray'));
   }
 });
 

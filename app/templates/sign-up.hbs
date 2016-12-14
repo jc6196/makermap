@@ -1,46 +1,52 @@
 <div class="container">
   <h1>Sign Up</h1>
   <form>
-    <div class="col-md-6">
-      <h3>My Log-In Info:</h3>
-    <p>{{input value=model.email placeholder="Email" class="form-control"}}</p>
-    <p>{{input value=model.username placeholder="User Name" class="form-control"}}</p>
-    <p>{{input value=model.password placeholder="Password" class="form-control"}}</p>
-    <hr />
-    <h3>My Maker Type:</h3>
-    <p>{{radio-button value='individual' checked=model.maker_type}} I am an Individual Maker</p>
-    <p>{{radio-button value='resource' checked=model.maker_type}} I provide Maker Resources (materials, supplies, etc. for Makers)</p>
-    <p>{{radio-button value='space' checked=model.maker_type}} I provide a Maker Space (places for Makers to make)</p>
-    <hr />
-    <h3>My Profile Info:</h3>
-    <p>{{input value=model.first_name placeholder="First Name" class="form-control"}}</p>
-    <p>{{input value=model.last_name placeholder="Last Name" class="form-control"}}</p>
-    <hr />
-    <h4>My Location:</h4>
-    <p>{{input value=model.street placeholder="Street Address" class="form-control"}}</p>
-    <p>{{input value=model.city placeholder="New York" class="form-control"}}</p>
-    <p>{{input value=model.state placeholder="NY" class="form-control"}}</p>
-    <p>{{input value=model.zip placeholder="ZIP" class="form-control"}}</p>
-    <hr />
-  </div>
-  <div class="col-md-6">
-    <h4>My Search Range:</h4>
-    <p>Select default search range (used to display default matches on your My MakerMap Dashboard based on your location, you can also always perform custom searches):</p>
-    <p>{{#select-box/native on-select=(action 'saveRange') as |range|}}
-    {{range.option value=1 label='1 Mile'}}
-    {{range.option value=2 label='2 Miles'}}
-    {{range.option value=3 label='3 Miles'}}
-    {{range.option value=4 label='4 miles'}}
-    {{range.option value=5 label='5 miles'}}
-    {{/select-box/native}}</p>
-    <p>Or, set default search by borough:</p>
-    <p>{{multiselect-checkboxes options=boroughs selection=selected_boroughs}}</p>
-    <hr />
-    <h4>My Interests:</h4>
-    <p>{{multiselect-checkboxes options=interests selection=selected_interests}}</p>
-    <hr />
-  </div>
-    <button {{action "save" model}} class="btn btn-primary">Sign Up</button>
-    <button {{action "cancel" model}} class="btn btn-link">Cancel</button>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>My Log-In Info:</h3>
+        <p>{{input value=model.email placeholder="Email" class="form-control"}}</p>
+        <p>{{input value=model.username placeholder="User Name" class="form-control"}}</p>
+        <p>{{input value=model.password placeholder="Password" class="form-control"}}</p>
+        <hr />
+        <h3>My Maker Type:</h3>
+        <p>{{radio-button value='Maker' checked=model.maker_type}} I am an Individual Maker</p>
+        <p>{{radio-button value='Maker Resource' checked=model.maker_type}} I provide Maker Resources (materials, supplies, etc. for Makers)</p>
+        <p>{{radio-button value='Maker Space' checked=model.maker_type}} I provide a Maker Space (places for Makers to make)</p>
+        <hr />
+        <h3>My Profile Info:</h3>
+        <p>{{input value=model.company_name placeholder="Company Name" class="form-control"}}</p>
+        <p>{{input value=model.first_name placeholder="First Name" class="form-control"}}</p>
+        <p>{{input value=model.last_name placeholder="Last Name" class="form-control"}}</p>
+        <hr />
+        <h3>My Location:</h3>
+        <p>{{input value=model.street placeholder="Street Address" class="form-control"}}</p>
+        <p>{{input value=model.city placeholder="New York" class="form-control"}}</p>
+        <p>{{input value=model.state placeholder="NY" class="form-control"}}</p>
+        <p>{{input value=model.zip placeholder="ZIP" class="form-control"}}</p>
+      </div>
+      <div class="col-md-6">
+        <h3>My Search Range:</h3>
+        <p>Select default search range (used to display default matches on your My MakerMap Dashboard based on your location, you can also always perform custom searches):</p>
+        <p>{{#select-box/native on-select=(action 'saveRange') as |range|}}
+        {{range.option value=1 label='1 Mile'}}
+        {{range.option value=2 label='2 Miles'}}
+        {{range.option value=3 label='3 Miles'}}
+        {{range.option value=4 label='4 miles'}}
+        {{range.option value=5 label='5 miles'}}
+        {{/select-box/native}}</p>
+        <p>Or, set default search by borough:</p>
+        <p>{{multiselect-checkboxes options=boroughs selection=selected_boroughs}}</p>
+        <hr />
+        <h3>My Interests:</h3>
+        <p>{{multiselect-checkboxes options=interests selection=selected_interests}}</p>
+      </div>
+    </div>
+    <div style="margin-bottom: 180px; text-align: center;">
+      <hr />
+      <p><button {{action "save" model}} class="btn btn-primary">Sign Up</button></p>
+      <p><button {{action "cancel" model}} class="btn btn-link">Cancel</button></p>
+    </div>
   </form>
+  
+
 </div>

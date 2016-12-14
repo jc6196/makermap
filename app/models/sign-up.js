@@ -5,6 +5,7 @@ export default DS.Model.extend({
   username: DS.attr('string'),
   password: DS.attr('string'),
   maker_type: DS.attr('string'),
+  company_name: DS.attr('string'),
   first_name: DS.attr('string'),
   last_name: DS.attr('string'),
   street: DS.attr('string'),

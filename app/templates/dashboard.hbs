@@ -1,4 +1,32 @@
 <div class="container">
     <h1>My MakerMap</h1>
+    <p> Your map shows all of the makers, spaces and resources within your search range and that match your interests.</p>
     {{g-maps name="my-map" lat=lat lng=lng zoom=zoom markers=markers}}
+    <div class="row" style="margin: 30px 0px;">
+        <h3 class="orange">Re-filter your MakerMap:</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <p>{{input value=model.street placeholder="Add New Street Address" class="form-control"}}</p>
+            <p>{{#select-box/native on-select=(action 'saveRange') as |range|}}
+            {{range.option value=1 label='1 Mile'}}
+            {{range.option value=2 label='2 Miles'}}
+            {{range.option value=3 label='3 Miles'}}
+            {{range.option value=4 label='4 miles'}}
+            {{range.option value=5 label='5 miles'}}
+            {{/select-box/native}}</p>
+            <p>Or, set default search by borough:</p>
+            <p>{{multiselect-checkboxes options=boroughs selection=selected_boroughs}}</p>
+        </div>
+        <div class="col-md-6">
+            <p>{{input value=model.company_name placeholder="Search by Name" class="form-control"}}</p>
+            <p>Update Interests:</p>
+            <p>{{multiselect-checkboxes options=interests selection=selected_interests}}</p>
+        </div>
+    </div>
+     <div class="row" style="margin-bottom: 180px; text-align: center;">
+      <hr />
+      <p><button {{action "save" model}} class="btn btn-primary">Update Map</button></p>
+      <p><button {{action "cancel" model}} class="btn btn-link">Cancel</button></p>
+    </div>
 </div>

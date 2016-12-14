@@ -19,7 +19,7 @@ html, body {
     border-color: #fff;
 }
 
-.navbar-inverse .navbar-brand:hover , .navbar-inverse .navbar-nav > li > a:hover {
+.navbar-inverse .navbar-brand:hover , .navbar-inverse .navbar-nav > li > a:hover, .navbar-toggle.collapsed:hover {
     background-color: #c83c0d;
 }
 
@@ -110,6 +110,14 @@ p {
     margin-bottom: 1.5em;
     font-size: 1em;
     line-height: 1.5;
+}
+
+.orange {
+   color: #F15623;
+}
+
+li {
+    list-style: none;
 }
 
 .hero-wrapper{

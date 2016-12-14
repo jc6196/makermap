@@ -23,12 +23,13 @@ export default Ember.Route.extend({
           this.set('myLong', myLongitude);
         });
 
-        if (myProfile.email && myProfile.username && myProfile.password && myProfile.maker_type && myProfile.first_name && myProfile.last_name && myProfile.street && myProfile.city && myProfile.state && myProfile.zip && myBoroughs && myInterests && this.myLat && this.myLong) {
+        if (myProfile.email && myProfile.username && myProfile.password && myProfile.maker_type && myProfile.company_name && myProfile.first_name && myProfile.last_name && myProfile.street && myProfile.city && myProfile.state && myProfile.zip && myBoroughs && myInterests && this.myLat && this.myLong) {
           let newProfile = this.store.createRecord('sign_up', {
             email: myProfile.email,
             username: myProfile.username,
             password: myProfile.password,
             maker_type: myProfile.maker_type,
+            company_name: myProfile.company_name,
             first_name: myProfile.first_name,
             last_name: myProfile.last_name,
             street: myProfile.street,
@@ -53,6 +54,7 @@ export default Ember.Route.extend({
       this.set('model.username', null);
       this.set('model.password', null);
       this.set('model.maker_type', null);
+      this.set('model.company_name', null);
       this.set('model.first_name', null);
       this.set('model.last_name', null);
       this.set('model.street', null);
